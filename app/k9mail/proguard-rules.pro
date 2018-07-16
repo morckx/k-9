@@ -23,3 +23,4 @@
 -dontnote com.fsck.k9.view.**
 
 -keep public class org.openintents.openpgp.**
+-keep public class com.bytehamster.lib.preferencesearch.** { *; }
