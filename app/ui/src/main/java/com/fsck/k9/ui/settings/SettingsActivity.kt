@@ -58,8 +58,17 @@ class SettingsActivity : K9Activity() {
     private fun populateSettingsList(accounts: List<Account>) {
         settingsAdapter.clear()
 
+        val miscSection = Section().apply {
+            val item = SettingsActionItem(getString(R.string.about_action), SettingsAction.ABOUT_SCREEN)
+            item.icon = R.attr.iconSettingsAbout
+            add(item)
+        }
+        settingsAdapter.add(miscSection)
+
         val generalSection = Section().apply {
-            add(SettingsActionItem(getString(R.string.general_settings_title), SettingsAction.GENERAL_SETTINGS))
+            val item = SettingsActionItem(getString(R.string.general_settings_title), SettingsAction.GENERAL_SETTINGS)
+            item.icon = R.attr.iconSettingsGeneral
+            add(item)
         }
         settingsAdapter.add(generalSection)
 
@@ -67,15 +76,12 @@ class SettingsActivity : K9Activity() {
             for (account in accounts) {
                 add(AccountItem(account))
             }
-            add(SettingsActionItem(getString(R.string.add_account_action), SettingsAction.ADD_ACCOUNT))
+            val item = SettingsActionItem(getString(R.string.add_account_action), SettingsAction.ADD_ACCOUNT)
+            item.icon = R.attr.iconSettingsAccountAdd
+            add(item)
         }
+        accountSection.setHeader(SettingsDividerItem(getString(R.string.accounts_title)))
         settingsAdapter.add(accountSection)
-
-        //TODO: add header and/or divider
-        val miscSection = Section().apply {
-            add(SettingsActionItem(getString(R.string.about_action), SettingsAction.ABOUT_SCREEN))
-        }
-        settingsAdapter.add(miscSection)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
