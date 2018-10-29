@@ -59,15 +59,14 @@ class SettingsActivity : K9Activity() {
         settingsAdapter.clear()
 
         val miscSection = Section().apply {
-            val item = SettingsActionItem(getString(R.string.about_action), SettingsAction.ABOUT_SCREEN)
-            item.icon = R.attr.iconSettingsAbout
+            val item = SettingsActionItem(getString(R.string.about_action), SettingsAction.ABOUT_SCREEN, R.attr.iconSettingsAbout)
             add(item)
         }
         settingsAdapter.add(miscSection)
 
         val generalSection = Section().apply {
-            val item = SettingsActionItem(getString(R.string.general_settings_title), SettingsAction.GENERAL_SETTINGS)
-            item.icon = R.attr.iconSettingsGeneral
+            val item = SettingsActionItem(getString(R.string.general_settings_title),
+                    SettingsAction.GENERAL_SETTINGS, R.attr.iconSettingsGeneral)
             add(item)
         }
         settingsAdapter.add(generalSection)
@@ -76,8 +75,7 @@ class SettingsActivity : K9Activity() {
             for (account in accounts) {
                 add(AccountItem(account))
             }
-            val item = SettingsActionItem(getString(R.string.add_account_action), SettingsAction.ADD_ACCOUNT)
-            item.icon = R.attr.iconSettingsAccountAdd
+            val item = SettingsActionItem(getString(R.string.add_account_action), SettingsAction.ADD_ACCOUNT, R.attr.iconSettingsAccountAdd)
             add(item)
         }
         accountSection.setHeader(SettingsDividerItem(getString(R.string.accounts_title)))
