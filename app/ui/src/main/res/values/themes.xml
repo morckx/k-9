@@ -75,8 +75,8 @@
         <item name="iconPreferencesDebug">@drawable/ic_bug_light</item>
         <item name="iconSettingsAbout">@drawable/ic_info_outline_light</item>
         <item name="iconSettingsGeneral">@drawable/ic_cog_light</item>
-        <item name="iconSettingsAccount">@drawable/ic_person_light</item>
-        <item name="iconSettingsAccountAdd">@drawable/ic_person_plus_light</item>
+        <item name="iconSettingsAccount">@drawable/ic_account_light</item>
+        <item name="iconSettingsAccountAdd">@drawable/ic_account_plus_light</item>
         <item name="textColorPrimaryRecipientDropdown">@android:color/primary_text_light</item>
         <item name="textColorSecondaryRecipientDropdown">@android:color/secondary_text_light</item>
         <item name="messageListSelectedBackgroundColor">#8038B8E2</item>
@@ -91,7 +91,7 @@
         <item name="messageListSeparatorBackgroundColor">#4d4d4d</item>
         <item name="messageViewBackgroundColor">#ffffffff</item>
         <item name="messageViewAttachmentBackground">@drawable/attachment_text_box_light</item>
-        <item name="messageComposeAddContactImage">@drawable/ic_person_plus_light</item>
+        <item name="messageComposeAddContactImage">@drawable/ic_account_plus_light</item>
         <item name="contactPictureFallbackDefaultBackgroundColor">#ffababab</item>
         <item name="contactTokenBackgroundColor">#ccc</item>
         <item name="composerBackgroundColor">@android:color/background_light</item>
@@ -174,8 +174,8 @@
         <item name="iconPreferencesDebug">@drawable/ic_bug_dark</item>
         <item name="iconSettingsAbout">@drawable/ic_info_outline_dark</item>
         <item name="iconSettingsGeneral">@drawable/ic_cog_dark</item>
-        <item name="iconSettingsAccount">@drawable/ic_person_dark</item>
-        <item name="iconSettingsAccountAdd">@drawable/ic_person_plus_dark</item>
+        <item name="iconSettingsAccount">@drawable/ic_account_dark</item>
+        <item name="iconSettingsAccountAdd">@drawable/ic_account_plus_dark</item>
         <item name="textColorPrimaryRecipientDropdown">@android:color/primary_text_dark</item>
         <item name="textColorSecondaryRecipientDropdown">@android:color/secondary_text_dark</item>
         <item name="messageListSelectedBackgroundColor">#8038B8E2</item>
@@ -190,7 +190,7 @@
         <item name="messageListSeparatorBackgroundColor">#FF606060</item>
         <item name="messageViewBackgroundColor">#000000</item>
         <item name="messageViewAttachmentBackground">@drawable/attachment_text_box_dark</item>
-        <item name="messageComposeAddContactImage">@drawable/ic_person_plus_dark</item>
+        <item name="messageComposeAddContactImage">@drawable/ic_account_plus_dark</item>
         <item name="contactTokenBackgroundColor">#313131</item>
         <item name="contactPictureFallbackDefaultBackgroundColor">#ff606060</item>
         <item name="composerBackgroundColor">@android:color/background_dark</item>
