@@ -248,7 +248,7 @@ public class MessageList extends K9Activity implements MessageListFragmentListen
         ViewModelProvider viewModelProvider = ViewModelProviders.of(this, new MessageListViewModelFactory());
         MessageListViewModel viewModel = viewModelProvider.get(MessageListViewModel.class);
 
-        if (isDrawerEnabled()) {
+        if (isDrawerEnabled() && account != null) {
             viewModel.getFolders(account).observe(this, new Observer<List<Folder>>() {
                 @Override
                 public void onChanged(@Nullable List<Folder> folders) {
@@ -572,11 +572,11 @@ public class MessageList extends K9Activity implements MessageListFragmentListen
     }
 
     private void initializeDrawer(Bundle savedInstanceState) {
+        drawer = new K9Drawer(this, savedInstanceState);
+
         if (!isDrawerEnabled()) {
             return;
         }
-
-        drawer = new K9Drawer(this, savedInstanceState);
 
         DrawerLayout drawerLayout = drawer.getLayout();
         drawerToggle = new ActionBarDrawerToggle(
@@ -1705,7 +1705,6 @@ public class MessageList extends K9Activity implements MessageListFragmentListen
         } else {
             drawer.selectFolder(null);
         }
-
         // now we know if we are in single account mode and need a subtitle
         actionBarSubTitle.setVisibility((!singleFolderMode) ? View.GONE : View.VISIBLE);
     }
