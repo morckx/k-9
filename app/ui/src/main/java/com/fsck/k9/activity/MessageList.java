@@ -1062,6 +1062,8 @@ public class MessageList extends K9Activity implements MessageListFragmentListen
                 menu.findItem(R.id.next_message).setVisible(false);
                 menu.findItem(R.id.previous_message).setVisible(false);
             } else {
+                menu.findItem(R.id.next_message).setVisible(false);
+                menu.findItem(R.id.previous_message).setVisible(false);
                 MessageReference ref = messageViewFragment.getMessageReference();
                 boolean initialized = (messageListFragment != null &&
                         messageListFragment.isLoadFinished());
@@ -1327,6 +1329,9 @@ public class MessageList extends K9Activity implements MessageListFragmentListen
 //        if (messageListFragment != null && displayMode != DisplayMode.MESSAGE_VIEW) {
 //            messageListFragment.onSwipeRightToLeft(e1, e2);
 //        }
+        if (displayMode == DisplayMode.MESSAGE_VIEW) {
+            showNextMessage();
+        }
     }
 
     @Override
@@ -1335,6 +1340,9 @@ public class MessageList extends K9Activity implements MessageListFragmentListen
 //        if (messageListFragment != null && displayMode != DisplayMode.MESSAGE_VIEW) {
 //            messageListFragment.onSwipeLeftToRight(e1, e2);
 //        }
+        if (displayMode == DisplayMode.MESSAGE_VIEW) {
+            showPreviousMessage();
+        }
     }
 
     private final class StorageListenerImplementation implements StorageManager.StorageListener {
