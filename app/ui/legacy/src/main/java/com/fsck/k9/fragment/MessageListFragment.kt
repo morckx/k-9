@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.os.Parcelable
+import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem

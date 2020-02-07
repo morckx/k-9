@@ -5,8 +5,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import android.content.res.Configuration
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
+import android.text.Html
+import android.text.Spanned
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
@@ -14,6 +18,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.FragmentManager
@@ -1069,9 +1074,30 @@ open class MessageList :
         actionBar!!.title = title
     }
 
+    fun setActionBarTitle(title: Spanned) {
+        actionBar!!.title = title
+    }
+
     override fun setMessageListTitle(title: String) {
         if (displayMode != DisplayMode.MESSAGE_VIEW) {
-            setActionBarTitle(title)
+            setActionBarTitle(title);
+            if (account != null && K9.isShowMessageListAccountColor) {
+                setActionBarTitle(title);
+                if(true) {
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                        setActionBarTitle(Html.fromHtml("<font color='" + account!!.getChipColor() + "'>▍</font>" + title, 0))
+                    };
+                    // drawerToggle.getDrawerArrowDrawable().setColor(account.getChipColor());
+                    // Drawable bg =  getResources().getDrawable(R.drawable.drawer_header_background);
+                    // bg.setColorFilter(account.getChipColor(), PorterDuff.Mode.MULTIPLY);
+                } else {
+                    actionBar?.setBackgroundDrawable(ColorDrawable(account!!.getChipColor()));
+                }
+            } else {
+                setActionBarTitle(title);
+//                drawerToggle.getDrawerArrowDrawable().setColor(Color.WHITE);
+                actionBar?.setBackgroundDrawable(null);
+            }
         }
     }
 
