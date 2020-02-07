@@ -188,6 +188,9 @@ object K9 : EarlyInit {
     var lockScreenNotificationVisibility = LockScreenNotificationVisibility.MESSAGE_COUNT
 
     @JvmStatic
+    var isShowMessageListAccountColor = true
+
+    @JvmStatic
     var isShowMessageListStars = true
 
     @JvmStatic

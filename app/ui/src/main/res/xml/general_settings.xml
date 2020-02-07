@@ -255,6 +255,11 @@
             android:key="messagelist_preferences"
             android:title="@string/messagelist_preferences">
 
+            <CheckBoxPreference
+                android:key="messagelist_indicate_account_color"
+                android:summary="@string/global_settings_indicate_account_color_summary"
+                android:title="@string/global_settings_indicate_account_color_label" />
+
             <ListPreference
                 android:dialogTitle="@string/global_settings_preview_lines_label"
                 android:entries="@array/preview_lines_entries"

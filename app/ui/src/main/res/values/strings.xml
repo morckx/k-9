@@ -276,6 +276,8 @@ Please submit bug reports, contribute new features and ask questions at
 
     <string name="global_settings_flag_label">Show stars</string>
     <string name="global_settings_flag_summary">Stars indicate flagged messages</string>
+    <string name="global_settings_indicate_account_color_label">Always indicate account color</string>
+    <string name="global_settings_indicate_account_color_summary">The current account color is indicated also when only a single account is shown</string>
     <string name="global_settings_preview_lines_label">Preview lines</string>
     <string name="global_settings_show_correspondent_names_label">Show correspondent names</string>
     <string name="global_settings_show_correspondent_names_summary">Show correspondent names rather than their email addresses</string>

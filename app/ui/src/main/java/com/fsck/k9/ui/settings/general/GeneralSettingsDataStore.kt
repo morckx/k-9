@@ -23,6 +23,7 @@ class GeneralSettingsDataStore(
             "fixed_message_view_theme" -> K9.isFixedMessageViewTheme
             "animations" -> K9.isShowAnimations
             "hide_special_accounts" -> K9.isHideSpecialAccounts
+            "messagelist_indicate_account_color" -> K9.isShowMessageListAccountColor
             "messagelist_stars" -> K9.isShowMessageListStars
             "messagelist_show_correspondent_names" -> K9.isShowCorrespondentNames
             "messagelist_sender_above_subject" -> K9.isMessageListSenderAboveSubject
@@ -52,6 +53,7 @@ class GeneralSettingsDataStore(
             "fixed_message_view_theme" -> K9.isFixedMessageViewTheme = value
             "animations" -> K9.isShowAnimations = value
             "hide_special_accounts" -> K9.isHideSpecialAccounts = value
+            "messagelist_indicate_account_color" -> K9.isShowMessageListAccountColor = value
             "messagelist_stars" -> K9.isShowMessageListStars = value
             "messagelist_show_correspondent_names" -> K9.isShowCorrespondentNames = value
             "messagelist_sender_above_subject" -> K9.isMessageListSenderAboveSubject = value
