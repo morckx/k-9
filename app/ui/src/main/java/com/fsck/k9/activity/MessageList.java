@@ -11,6 +11,7 @@ import android.content.IntentSender;
 import android.content.IntentSender.SendIntentException;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -1213,10 +1214,23 @@ public class MessageList extends K9Activity implements MessageListFragmentListen
         actionBar.setTitle(title);
     }
 
+    private void indicateAccountColorInMassageListTitle() {
+        actionBar.setBackgroundDrawable(new ColorDrawable(account.getChipColor()));
+    }
+
+    private void resetAccountColorInMassageListTitle() {
+        actionBar.setBackgroundDrawable(null);
+    }
+
     @Override
     public void setMessageListTitle(String title) {
         if (displayMode != DisplayMode.MESSAGE_VIEW) {
             setActionBarTitle(title);
+            if (account != null && K9.isShowMessageListAccountColor()) {
+                indicateAccountColorInMassageListTitle();
+            } else {
+                resetAccountColorInMassageListTitle();
+            }
         }
     }
 
@@ -1249,6 +1263,7 @@ public class MessageList extends K9Activity implements MessageListFragmentListen
             messageViewFragment = fragment;
 
             if (displayMode != DisplayMode.SPLIT_VIEW) {
+                resetAccountColorInMassageListTitle();
                 showMessageView();
             }
         }
